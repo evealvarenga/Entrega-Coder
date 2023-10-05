@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(__dirname + "/public"));
 
 app.engine("handlebars", engine());
-app.set('view', __dirname+'/views');
 app.set('view engine', "handlebars");
+app.set('view', __dirname + "/views");
 
 //Routes
 app.use("/api/products", productRouter); 

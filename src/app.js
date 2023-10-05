@@ -16,9 +16,9 @@ app.set('view', __dirname+'/views');
 app.set('view engine', "handlebars");
 
 //Routes
-app.use("api/products", productRouter); 
-app.use("api/cart", cartRouter);
-app.use("api/views", viewsRouter);
+app.use("/api/products", productRouter); 
+app.use("/api/cart", cartRouter);
+app.use("/api/views", viewsRouter);
 
 //SocketServer
 const httpServer = app.listen(8080, () => {console.log(`Servidor escuchando en el puerto 8080`);});

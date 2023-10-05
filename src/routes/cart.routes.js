@@ -28,7 +28,7 @@ router.get('/:cid', async (req, res) => {
         res.status(500).json({ error: 'Hubo un error al obtener los productos del carrito.' });
     }
 });
-
+ 
 //Endpoint para agregar un producto al carrito
 router.post('/:cid/product/:pid', async (req, res) => {
     const { cid, pid } = req.params;

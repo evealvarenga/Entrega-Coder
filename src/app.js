@@ -5,6 +5,9 @@ import viewsRouter from './routes/views.routes.js';
 import { engine } from 'express-handlebars';
 import { __dirname } from './utils.js';
 import { Server } from 'socket.io';
+import ProductManager from './ProductManager.js';
+
+const manager = new ProductManager('./src/productos.json');
 
 const app = express();
 app.use(express.json());
@@ -27,14 +30,14 @@ socketServer.on('connection', (socket)=> {
 	console.log('cliente conectado')
 	try {
 		socket.on('product', async (product)  => {
-			await manager1.addProduct(product)
+			await manager.addProduct(product)
 		})
 	} catch (error) {
 		return error
 	}
 	try {
 		socket.on('id', async (id)  => {
-			await manager1.deleteProduct(+id)
+			await manager.deleteProduct(+id)
 		})
 	} catch (error) {
 		return error

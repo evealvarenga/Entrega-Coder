@@ -26,7 +26,4 @@ const socketServer = new Server(httpServer);
 socketServer.on('connection', socket => {
   console.log('socket', socket);
   console.log("Cliente conectado");
-  socket.on('disconnect', ()=>{
-    console.log("Cliente desconectado");
-  })
 })

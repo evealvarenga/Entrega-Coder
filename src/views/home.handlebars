@@ -1,13 +1,13 @@
-{{#if id}}
 <h2>Lista de productos</h2>
-    {{#each products}}
-    <li>
+<ul>
+    {{#each response}}
+        <br>
+        <br>
         {{thumbnail}}
+        <br>
         <h3>{{title}}</h3>
         <p><i>Precio ${{price}}</i> - Unidades disponibles: {{stock}}</p>
         <p>{{description}}</p>
-    </li>
+        <p>ID: {{id}} - Code: {{code}}</p>
     {{/each}}
-{{#else}}
-    <p>No se encontraron productos</p>
-{{/if}}
+</ul>
